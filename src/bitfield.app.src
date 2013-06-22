@@ -1,0 +1,11 @@
+{application, bitfield, [
+  {id, "bitfield"},
+  {description, "Pack/unpack bitfields"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+    kernel,
+    stdlib
+  ]},
+  {env, []}
+]}.
