@@ -20,6 +20,8 @@ unpack(Packed, Enum) when is_binary(Packed) andalso is_list(Enum) ->
   unpack(Packed, Enum, []).
 unpack(_, [], Acc) ->
   lists:reverse(Acc);
+unpack(<<>>, _, Acc) ->
+  lists:reverse(Acc);
 unpack(<<1:1, Packed/bitstring>>, [Field|Enum], Acc) ->
   unpack(Packed, Enum, [Field|Acc]);
 unpack(<<0:1, Packed/bitstring>>, [_|Enum], Acc) ->
