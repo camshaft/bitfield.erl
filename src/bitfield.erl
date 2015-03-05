@@ -22,9 +22,9 @@ unpack(_, [], Acc) ->
   lists:reverse(Acc);
 unpack(<<>>, _, Acc) ->
   lists:reverse(Acc);
-unpack(<<1:1, Packed/bitstring>>, [Field|Enum], Acc) ->
+unpack(<<1:1/little-unsigned, Packed/bitstring>>, [Field|Enum], Acc) ->
   unpack(Packed, Enum, [Field|Acc]);
-unpack(<<0:1, Packed/bitstring>>, [_|Enum], Acc) ->
+unpack(<<0:1/little-unsigned, Packed/bitstring>>, [_|Enum], Acc) ->
   unpack(Packed, Enum, Acc).
 
 fill(Bitstring) ->
