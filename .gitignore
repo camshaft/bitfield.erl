@@ -4,3 +4,7 @@ deps
 *.beam
 *.plt
 ebin
+*.log
+*.dump
+mix.lock
+_build
